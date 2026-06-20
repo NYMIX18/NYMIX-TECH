@@ -1,6 +1,6 @@
 <?php
-define('PESAPAL_CONSUMER_KEY',    'aSEvuNgC8zNEUIiKWe9+O9mA38aB+WHp');
-define('PESAPAL_CONSUMER_SECRET', 'gUWXIls6lQzFr/0WTjAURT/Q2Qc=');
+define('PESAPAL_CONSUMER_KEY',    'my pesapl consumer key-secret');
+define('PESAPAL_CONSUMER_SECRET', 'my pesapal consumer secret key-secret');
 define('PESAPAL_ENV',             'live');
 
 define('PESAPAL_BASE_URL', PESAPAL_ENV === 'sandbox'

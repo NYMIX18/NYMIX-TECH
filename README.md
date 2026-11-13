@@ -24,19 +24,20 @@
 
 1. [The story](#the-story)
 2. [At a glance](#at-a-glance)
-3. [The four portals](#the-four-portals)
-4. [Security Operations Centre](#security-operations-centre-soc)
-5. [AI layer](#ai-layer)
-6. [Payments and compliance](#payments-and-compliance)
-7. [Database](#database)
-8. [Architecture](#architecture)
-9. [Tech stack](#tech-stack)
-10. [Project structure](#project-structure)
-11. [Getting started](#getting-started-local-xampp)
-12. [Security notes](#security-notes)
-13. [What I learned](#what-i-learned)
-14. [Roadmap](#roadmap)
-15. [Author](#author)
+3. [Product tour](#product-tour)
+4. [The four portals](#the-four-portals)
+5. [Security Operations Centre](#security-operations-centre-soc)
+6. [AI layer](#ai-layer)
+7. [Payments and compliance](#payments-and-compliance)
+8. [Database](#database)
+9. [Architecture](#architecture)
+10. [Tech stack](#tech-stack)
+11. [Project structure](#project-structure)
+12. [Getting started](#getting-started-local-xampp)
+13. [Security notes](#security-notes)
+14. [What I learned](#what-i-learned)
+15. [Roadmap](#roadmap)
+16. [Author](#author)
 
 ---
 
@@ -60,9 +61,66 @@ The result is a SOC that lives inside the product: a request-level IDS/IPS (**Sh
 | **Business types supported** | Hardware, wholesale, supermarket, agrovet, pharmacy, electronics |
 | **Payment providers** | M-Pesa (Daraja), Paystack, Pesapal, IntaSend |
 | **Tax compliance** | KRA eTIMS submission queue with failure alerts |
+| **AI in the product** | Branch Insights, accounts-under-review explanations, recruitment screening, support auto-replies, in-portal assistant |
+| **Staff engagement** | XP levels from sales, hours and stock actions |
 | **Security posture checks** | 30+ automatic checks, scored 0-100 |
 | **Shield detection** | Recon, scanner, SQLi, XSS, traversal, LFI, command injection, Log4Shell, Shellshock, floods |
 | **AI providers** | Groq, then Gemini, then OpenRouter (automatic fallback) |
+
+---
+
+## Product tour
+
+A walk through the real product. All data in these screenshots is demo data for a fictional client, **Savannah Hardware & Supplies**.
+
+### Client Portal (the business owner's view)
+
+<table>
+<tr>
+<td width="50%"><img src="docs/screenshots/09-client-home.png" alt="Home: module launcher with search"><br><sub><b>Home: module launcher with search</b></sub></td>
+<td width="50%"><img src="docs/screenshots/08-client-modules.png" alt="Every module as a card: branches, warehouses, staff, salary, eTIMS, marketplace"><br><sub><b>Every module as a card: branches, warehouses, staff, salary, eTIMS, marketplace</b></sub></td>
+</tr>
+</table>
+<p align="center"><img src="docs/screenshots/06-client-dashboard.png" alt="Dashboard: revenue, sales, average sale, branches, subscription status and open tickets" width="90%"><br><sub><b>Dashboard: revenue, sales, average sale, branches, subscription status and open tickets</b></sub></p>
+<p align="center"><img src="docs/screenshots/07-client-nymix-ai-assistant.png" alt="NYMIX AI inside the portal: it answers "how do I..." questions and says up front that it cannot see business numbers" width="90%"><br><sub><b>NYMIX AI inside the portal: it answers "how do I..." questions and says up front that it cannot see business numbers</b></sub></p>
+
+### Staff Portal (branch manager and staff view)
+
+<p align="center"><img src="docs/screenshots/10-staff-home-xp-levels.png" alt="Staff home: personal greeting, XP level (Rookie to Legend) and activity stats (sales, hours, stock actions)" width="90%"><br><sub><b>Staff home: personal greeting, XP level (Rookie to Legend) and activity stats (sales, hours, stock actions)</b></sub></p>
+<table>
+<tr>
+<td width="50%"><img src="docs/screenshots/12-branch-insights-30d.png" alt="Branch Insights (30 days): KPIs plus an AI verdict and risk score"><br><sub><b>Branch Insights (30 days): KPIs plus an AI verdict and risk score</b></sub></td>
+<td width="50%"><img src="docs/screenshots/13-branch-insights-90d.png" alt="Branch Insights (90 days): same branch over a longer window, with what is working and what to watch"><br><sub><b>Branch Insights (90 days): same branch over a longer window, with what is working and what to watch</b></sub></td>
+</tr>
+</table>
+<table>
+<tr>
+<td width="50%"><img src="docs/screenshots/14-hr-and-payroll.png" alt="HR and Payroll: staff, fixed and hourly pay, CV tracking, payslips"><br><sub><b>HR and Payroll: staff, fixed and hourly pay, CV tracking, payslips</b></sub></td>
+<td width="50%"><img src="docs/screenshots/15-my-finance-wallet.png" alt="My Finance: wallet card and read-only employment profile"><br><sub><b>My Finance: wallet card and read-only employment profile</b></sub></td>
+</tr>
+</table>
+<table>
+<tr>
+<td width="50%"><img src="docs/screenshots/16-messages-and-requests.png" alt="Messages: team chats and requests to the manager (for example payout requests)"><br><sub><b>Messages: team chats and requests to the manager (for example payout requests)</b></sub></td>
+<td width="50%"><img src="docs/screenshots/19-stock-movement-log.png" alt="Stock movement log with types, quantities, who and why"><br><sub><b>Stock movement log with types, quantities, who and why</b></sub></td>
+</tr>
+</table>
+<table>
+<tr>
+<td width="50%"><img src="docs/screenshots/17-marketplace-orders.png" alt="Marketplace orders: tracking, delivery agent, customer chats and ratings"><br><sub><b>Marketplace orders: tracking, delivery agent, customer chats and ratings</b></sub></td>
+<td width="50%"><img src="docs/screenshots/18-marketplace-store-health.png" alt="Marketplace store: health score, live preview (desktop and phone), products and fleet"><br><sub><b>Marketplace store: health score, live preview (desktop and phone), products and fleet</b></sub></td>
+</tr>
+</table>
+<table>
+<tr>
+<td width="50%"><img src="docs/screenshots/11-staff-accounts-under-review.png" alt="Accounts Under Review: rule-based flag with an AI explanation and evidence"><br><sub><b>Accounts Under Review: rule-based flag with an AI explanation and evidence</b></sub></td>
+<td width="50%"><img src="docs/screenshots/20-recruitment-ai-screening.png" alt="Recruitment: applicants ranked by match, AI screening and a hiring pipeline"><br><sub><b>Recruitment: applicants ranked by match, AI screening and a hiring pipeline</b></sub></td>
+</tr>
+</table>
+
+### Security Operations Centre (Super Admin view)
+
+See the [SOC section](#security-operations-centre-soc) below for the Command Center, AI analyst, Shield and PDF reports.
 
 ---
 
@@ -91,7 +149,14 @@ The biggest portal (about 18,500 lines). Sections include:
 - **Account reviews:** structured review flow (open, meeting, upheld, cleared) with a full log
 - **Messaging:** in-app threads between staff, with read receipts
 - **Jobs:** an internal job board with applicants and AI scoring
-- **Marketplace:** store profiles, listings, orders, order tracking, reviews and vehicles
+- **Marketplace:** a public store on NYMIX Market with a **store health score** (checklist with points: logo, banner, tagline, about text, categories, map pin, in-stock products, product photos), a desktop and phone **live preview**, products, a delivery **fleet**, **order tracking** with delivery agents and ETAs, customer chats and ratings
+- **Gamification:** every staff member has an **XP level** (Rookie, Rising Star, Pro, Elite, Legend) earned from sales, hours worked and stock actions, with a "next aim" hint such as how many more sales or hours reach the next level
+- **Branch Insights (AI):** profit, revenue, costs and advice worked out from real numbers over 7, 30 or 90 days, with a 0-100 branch health score, an AI verdict, what is working and what to watch out for, and a re-analyse button
+- **Accounts Under Review:** the rule engine flags unusual staff activity (for example a long absence with no sign-in and no approved leave), the **AI only explains the flag**, and a manager gets the evidence table and decides. The screen states plainly that a flag is a lead to check, not proof of wrongdoing
+- **HR and Payroll:** team overview, staff awaiting sign-up, fixed payroll per month, hourly staff, who is missing a CV, appoint staff, payslips and messages
+- **My Finance:** every employee gets a wallet-style card and a read-only employment profile (role, branch, pay type, salary, allowances, paid-via)
+- **Recruitment (AI):** post jobs, rank applicants by **rule-based match percentage** with missing-skill tags, get an AI recommendation with concerns, and move people through shortlisted, interview, offered, hired or rejected
+- **Stock movement log:** every adjustment, transfer and count is logged with type, quantity, who did it and why, next to low-stock alerts
 - **KRA eTIMS:** submission queue with an email alert to the manager and owner when a submission fails
 
 **Staff identity verification** (`identity_verify.php`): checks a Kenyan ID during staff registration. It supports the **Maisha Card** (3rd gen, 9-digit number, MRZ on the back), 2nd generation IDs (separate serial number) and older laminated IDs. The ID number is found by its **label**, so the card serial number is never mistaken for it. **Nothing is stored**: no images, no OCR text, no face data.
@@ -105,6 +170,8 @@ For the business owners who pay for NYMIX:
 - Subscription status: "you're all paid up", "subscription on hold", grace periods and read-only mode
 - **Branches** overview and **sales overview** with top products this month
 - Checkout with Paystack, Pesapal and IntaSend
+- A **module launcher** home screen with search, and a dashboard with revenue, sales, average sale and branches for today, 7 days or this month
+- **NYMIX AI assistant** inside the portal: it explains how to use the portal and is designed to say up front that it cannot see the client's business numbers
 - Receipts and receipt verification
 - Support tickets with the NYMIX help desk (including voice replies)
 
@@ -373,7 +440,7 @@ nymix-tech/
 │   └── *_helper.php            # Paystack, Pesapal, IntaSend
 ├── database/schema.sql         # Schema only (no data)
 ├── assets/                     # Bootstrap, Chart.js, Font Awesome
-├── docs/screenshots/           # Screenshots used in this README
+├── docs/screenshots/           # 20 screenshots used in this README
 ├── uploads/ · logs/            # Runtime data (git-ignored)
 └── *.example.php               # Config templates (copy and fill in)
 ```

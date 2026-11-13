@@ -1,0 +1,31 @@
+# --- Secrets: never commit real config ---
+includes/db.php
+includes/mail_config.php
+includes/paystack_config.php
+includes/intasend_config.php
+pesapal_config.php
+pesapal_ipn_id.txt
+.env
+
+# --- User data and runtime output ---
+uploads/*
+!uploads/.gitkeep
+logs/*
+!logs/.gitkeep
+!logs/.htaccess
+admin/reports_store/*.pdf
+*.log
+
+# --- Database dumps (real data) ---
+*.sql
+!database/schema.sql
+
+# --- Dev helpers / misc ---
+diag.php
+test_db.php
+viewlog.php
+admin/debug.php
+fa.zip
+.DS_Store
+Thumbs.db
+error_log.php

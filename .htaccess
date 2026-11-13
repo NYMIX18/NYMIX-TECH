@@ -1,0 +1,18 @@
+# NYMIX-SHIELD  (project root)  -  Apache 2.4
+Options -Indexes
+ServerSignature Off
+
+# Send missing (404) and forbidden (403) requests to the Shield so scanners are caught.
+# >>> If your folder is not called "nymix_hardwares" (or the site lives at the domain root), change this path: <<<
+ErrorDocument 404 /nymix_hardwares/shield_404.php
+ErrorDocument 403 /nymix_hardwares/shield_404.php
+
+# Never downloadable from the browser
+<FilesMatch "(?i)\.(sql|bak|old|orig|swp|log|ini|inc|sh|zip|tar|gz|env|md)$">
+    Require all denied
+</FilesMatch>
+
+# Developer helper scripts: this computer only
+<FilesMatch "^(diag|test_db|viewlog|debug)\.php$">
+    Require ip 127.0.0.1 ::1
+</FilesMatch>
